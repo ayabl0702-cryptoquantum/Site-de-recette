@@ -1,0 +1,307 @@
+
+
+:root {
+    --marine: #0b2a55;
+    --marine-fonce: #082247;
+    --bleu-clair: #8fc3ea;
+    --bleu-pale: #eef6fd;
+    --creme: #fbf7f1;
+    --orange: #ff5a1f;
+    --orange-fonce: #e84a10;
+}
+
+/* ---------- Base ---------- */
+body {
+    font-family: "Nunito Sans", Arial, sans-serif;
+    font-size: 1.1rem;
+    color: var(--marine);
+    background-color: var(--creme);
+}
+
+h1, h2, h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 800;
+}
+
+a {
+    color: var(--marine);
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.orange { color: var(--orange); }
+.centre { text-align: center; }
+
+/* texte caché à l'écran mais lu par les lecteurs d'écran */
+.cache {
+    position: absolute;
+    left: -9999px;
+}
+
+/* ---------- Bouton orange ---------- */
+.bouton {
+    display: inline-block;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--orange);
+    color: white;
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+.bouton:hover {
+    background-color: var(--orange-fonce);
+    color: white;
+}
+
+/* petit titre manuscrit orange */
+.petit-titre {
+    font-family: "Caveat", cursive;
+    font-size: 2.4rem;
+    color: var(--orange);
+    margin-bottom: 0;
+}
+
+/* ---------- En-tête et navbar ---------- */
+header {
+    background-color: var(--creme);
+    border-bottom: 4px solid var(--bleu-clair);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.logo img {
+    width: 60px;
+}
+.logo span {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+.logo strong {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.6rem;
+}
+.logo small {
+    font-size: 1rem;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 700;
+    color: var(--marine);
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--orange);
+}
+.navbar-nav .nav-link.active {
+    border-bottom: 3px solid var(--orange);
+}
+
+/* ---------- Bandeau (accueil et à propos) ---------- */
+.hero {
+    padding: 90px 0;
+    color: white;
+    /* image de fond (img/hero.png) + dégradé bleu de secours */
+    background:
+        linear-gradient(90deg, rgba(8, 34, 71, 0.85), rgba(8, 34, 71, 0.3)),
+        url("../img/hero.png") center / cover no-repeat,
+        linear-gradient(160deg, #0a2f63, #1c6bb0);
+}
+.hero h1 {
+    font-size: 3.4rem;
+}
+.texte-hero {
+    font-size: 1.25rem;
+    margin-bottom: 25px;
+}
+
+/* le bandeau de la page à propos utilise une autre photo */
+.hero-apropos {
+    background:
+        linear-gradient(90deg, rgba(8, 34, 71, 0.85), rgba(8, 34, 71, 0.3)),
+        url("../img/saumon-1.png") center / cover no-repeat,
+        linear-gradient(160deg, #0a2f63, #1c6bb0);
+}
+
+/* ---------- Sections avec décors ---------- */
+.univers {
+    position: relative;
+    overflow: hidden;
+    padding: 70px 0;
+    background-color: var(--creme);
+}
+.univers h2 {
+    font-size: 3rem;
+}
+
+.deco {
+    position: absolute;
+    opacity: 0.8;
+}
+.deco-haut-gauche  { top: 30px;    left: 20px;  width: 130px; }
+.deco-haut-droite  { top: 40px;    right: 20px; width: 170px; }
+.deco-bas-gauche   { bottom: 0;    left: 0;     width: 90px; }
+.deco-bas-droite   { bottom: 0;    right: 0;    width: 90px; }
+
+/* ---------- Pages claires (recettes) ---------- */
+.fond-bleu {
+    padding: 40px 0 60px;
+    background-color: var(--bleu-pale);
+}
+.titre-page h1 {
+    font-size: 3.4rem;
+}
+.titre-page {
+    margin-bottom: 30px;
+}
+
+/* ---------- Cartes ---------- */
+.carte {
+    margin-bottom: 25px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: var(--creme);
+    box-shadow: 0 4px 15px rgba(11, 42, 85, 0.1);
+}
+.carte h2,
+.carte h3 {
+    font-size: 1.5rem;
+}
+
+.photo-carte {
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.infos {
+    list-style: none;
+    padding: 0;
+}
+
+/* ---------- Page d'une recette ---------- */
+.entete-recette {
+    margin-bottom: 30px;
+}
+.entete-recette h1 {
+    font-size: 3rem;
+}
+.carousel-control-prev,
+.carousel-control-next {
+    opacity: 1;
+}
+/* flèches du carousel : rond marine pour qu'elles se voient sur toutes les photos */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgba(11, 42, 85, 0.7);
+    background-size: 50%;
+}
+.carousel-item img {
+    height: 380px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.carte ol li {
+    margin-bottom: 15px;
+}
+.carte ol h3 {
+    font-size: 1.15rem;
+    margin-bottom: 2px;
+}
+
+.message {
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-color: #e6f6ec;
+}
+
+/* formulaire */
+label {
+    display: block;
+    font-weight: 700;
+}
+input,
+textarea,
+select {
+    width: 100%;
+    max-width: 500px;
+    padding: 8px 12px;
+    border: 1px solid var(--bleu-clair);
+    border-radius: 8px;
+    font-family: inherit;
+}
+
+/* ---------- Pied de page ---------- */
+footer {
+    padding: 40px 0 20px;
+    background-color: var(--marine);
+    color: white;
+}
+footer a {
+    color: white;
+}
+footer a:hover {
+    color: var(--bleu-clair);
+}
+footer .logo img {
+    width: 55px;
+}
+footer .logo strong {
+    color: white;
+}
+.liens-footer {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.reseaux {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+footer p {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+/* ---------- Petits écrans ---------- */
+@media (max-width: 767px) {
+    .hero h1,
+    .titre-page h1,
+    .entete-recette h1,
+    .univers h2 {
+        font-size: 2.2rem;
+    }
+    .hero {
+        padding: 50px 0;
+    }
+    .deco {
+        display: none;
+    }
+    footer .row > div {
+        margin-bottom: 15px;
+    }
+    footer .logo {
+        justify-content: center;
+    }
+}
+
+
+/* ---------- Petites classes à nous (remplacent les utilitaires Bootstrap) ---------- */
+.aligne-centre { align-items: center; }
+.ligne-centree { justify-content: center; }
+.menu-droite { margin-left: auto; }
+.photo-diapo { display: block; width: 100%; }
